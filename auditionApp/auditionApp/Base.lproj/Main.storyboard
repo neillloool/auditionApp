@@ -30,6 +30,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" keyboardDismissMode="onDrag" text="Type Notes Here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dkz-QO-VLn">
+                                <rect key="frame" x="20" y="165" width="560" height="312"/>
+                                <color key="backgroundColor" red="0.98737980769230771" green="0.98737980769230771" blue="0.98737980769230771" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUg-LU-px3">
+                                <rect key="frame" x="508" y="505" width="72" height="30"/>
+                                <color key="backgroundColor" red="0.92549019607843142" green="0.93725490196078431" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.72999999999999998" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" red="0.98458759365419202" green="0.99757539291071584" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VWS-aa-mgu">
                                 <rect key="frame" x="20" y="119" width="560" height="29"/>
                                 <segments>
@@ -38,31 +52,37 @@
                                     <segment title="No"/>
                                 </segments>
                             </segmentedControl>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dkz-QO-VLn">
-                                <rect key="frame" x="20" y="165" width="560" height="312"/>
-                                <color key="backgroundColor" red="0.98737980769230771" green="0.98737980769230771" blue="0.98737980769230771" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dkz-QO-VLn" secondAttribute="bottom" constant="123" id="7Nr-Bm-WYf"/>
                             <constraint firstItem="VWS-aa-mgu" firstAttribute="top" secondItem="J8k-8h-oFx" secondAttribute="bottom" constant="26" id="BQl-UV-i7n"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VUg-LU-px3" secondAttribute="trailing" id="FrZ-ff-eg0"/>
                             <constraint firstAttribute="leadingMargin" secondItem="AYz-GZ-8fe" secondAttribute="leading" id="KfT-t8-yJq"/>
+                            <constraint firstItem="VUg-LU-px3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="488" id="OdU-L0-ObH"/>
                             <constraint firstItem="dkz-QO-VLn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QzP-um-4dG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VUg-LU-px3" secondAttribute="trailing" id="RIF-Xf-WW9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VWS-aa-mgu" secondAttribute="trailing" id="U5W-9U-t9s"/>
                             <constraint firstAttribute="leadingMargin" secondItem="dkz-QO-VLn" secondAttribute="leading" id="YsX-jA-TTC"/>
                             <constraint firstItem="J8k-8h-oFx" firstAttribute="leading" secondItem="AYz-GZ-8fe" secondAttribute="trailing" constant="8" id="aBb-Gy-OzA"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VUg-LU-px3" secondAttribute="bottom" constant="65" id="b4T-XS-Igh"/>
                             <constraint firstItem="VWS-aa-mgu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bSf-ns-Yje"/>
                             <constraint firstAttribute="leadingMargin" secondItem="VWS-aa-mgu" secondAttribute="leading" id="cTP-H7-dbj"/>
                             <constraint firstItem="dkz-QO-VLn" firstAttribute="top" secondItem="VWS-aa-mgu" secondAttribute="bottom" constant="18" id="fkT-F0-c93"/>
                             <constraint firstItem="J8k-8h-oFx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="43" id="fsE-JN-SKX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dkz-QO-VLn" secondAttribute="trailing" id="gGf-eh-pJy"/>
+                            <constraint firstItem="VUg-LU-px3" firstAttribute="top" secondItem="dkz-QO-VLn" secondAttribute="bottom" constant="28" id="hid-9D-fgt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="J8k-8h-oFx" secondAttribute="trailing" id="ns3-Um-ZlK"/>
                             <constraint firstItem="AYz-GZ-8fe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="52" id="vdY-7F-x1h"/>
                             <constraint firstItem="dkz-QO-VLn" firstAttribute="top" secondItem="VWS-aa-mgu" secondAttribute="bottom" constant="44" id="zSW-M3-VGb"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="FrZ-ff-eg0"/>
+                                <exclude reference="OdU-L0-ObH"/>
+                                <exclude reference="hid-9D-fgt"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="notes" destination="dkz-QO-VLn" id="1KB-Gr-Pvx"/>
