@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10102" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10080"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="auditionApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,60 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYz-GZ-8fe">
+                                <rect key="frame" x="20" y="72" width="66" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type Name Here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J8k-8h-oFx">
+                                <rect key="frame" x="94" y="63" width="486" height="30"/>
+                                <color key="backgroundColor" red="0.94855769230769227" green="0.94855769230769227" blue="0.94855769230769227" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VWS-aa-mgu">
+                                <rect key="frame" x="20" y="119" width="560" height="29"/>
+                                <segments>
+                                    <segment title="Yes"/>
+                                    <segment title="Maybe"/>
+                                    <segment title="No"/>
+                                </segments>
+                            </segmentedControl>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dkz-QO-VLn">
+                                <rect key="frame" x="20" y="165" width="560" height="312"/>
+                                <color key="backgroundColor" red="0.98737980769230771" green="0.98737980769230771" blue="0.98737980769230771" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dkz-QO-VLn" secondAttribute="bottom" constant="123" id="7Nr-Bm-WYf"/>
+                            <constraint firstItem="VWS-aa-mgu" firstAttribute="top" secondItem="J8k-8h-oFx" secondAttribute="bottom" constant="26" id="BQl-UV-i7n"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="AYz-GZ-8fe" secondAttribute="leading" id="KfT-t8-yJq"/>
+                            <constraint firstItem="dkz-QO-VLn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QzP-um-4dG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VWS-aa-mgu" secondAttribute="trailing" id="U5W-9U-t9s"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="dkz-QO-VLn" secondAttribute="leading" id="YsX-jA-TTC"/>
+                            <constraint firstItem="J8k-8h-oFx" firstAttribute="leading" secondItem="AYz-GZ-8fe" secondAttribute="trailing" constant="8" id="aBb-Gy-OzA"/>
+                            <constraint firstItem="VWS-aa-mgu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bSf-ns-Yje"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="VWS-aa-mgu" secondAttribute="leading" id="cTP-H7-dbj"/>
+                            <constraint firstItem="dkz-QO-VLn" firstAttribute="top" secondItem="VWS-aa-mgu" secondAttribute="bottom" constant="18" id="fkT-F0-c93"/>
+                            <constraint firstItem="J8k-8h-oFx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="43" id="fsE-JN-SKX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dkz-QO-VLn" secondAttribute="trailing" id="gGf-eh-pJy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="J8k-8h-oFx" secondAttribute="trailing" id="ns3-Um-ZlK"/>
+                            <constraint firstItem="AYz-GZ-8fe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="52" id="vdY-7F-x1h"/>
+                            <constraint firstItem="dkz-QO-VLn" firstAttribute="top" secondItem="VWS-aa-mgu" secondAttribute="bottom" constant="44" id="zSW-M3-VGb"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="notes" destination="dkz-QO-VLn" id="1KB-Gr-Pvx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="387"/>
         </scene>
     </scenes>
 </document>

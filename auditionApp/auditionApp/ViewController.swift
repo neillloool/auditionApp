@@ -10,16 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
+ 
+    @IBOutlet var notes: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let borderColor : UIColor = UIColor(red: 0.85, green: 0.85, blue: 0.85, alpha: 1.0)
+        notes.layer.borderWidth = 1
+        notes.layer.borderColor = borderColor.CGColor
+  
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
+    
 }
 
