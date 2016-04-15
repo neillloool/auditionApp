@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		98707A021CB82D5500F54128 /* Audition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98707A011CB82D5500F54128 /* Audition.swift */; };
+		987FD0B81CC1714D00E77CBB /* AuditionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987FD0B71CC1714D00E77CBB /* AuditionListViewController.swift */; };
+		987FD0BA1CC173BB00E77CBB /* AuditionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987FD0B91CC173BB00E77CBB /* AuditionStore.swift */; };
 		98F3D9CE1CB4957E008BF80F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F3D9CD1CB4957E008BF80F /* AppDelegate.swift */; };
-		98F3D9D01CB4957E008BF80F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F3D9CF1CB4957E008BF80F /* ViewController.swift */; };
+		98F3D9D01CB4957E008BF80F /* AuditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F3D9CF1CB4957E008BF80F /* AuditionViewController.swift */; };
 		98F3D9D31CB4957E008BF80F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F3D9D11CB4957E008BF80F /* Main.storyboard */; };
 		98F3D9D51CB4957E008BF80F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98F3D9D41CB4957E008BF80F /* Assets.xcassets */; };
 		98F3D9D81CB4957E008BF80F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F3D9D61CB4957E008BF80F /* LaunchScreen.storyboard */; };
@@ -17,9 +19,11 @@
 
 /* Begin PBXFileReference section */
 		98707A011CB82D5500F54128 /* Audition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audition.swift; sourceTree = "<group>"; };
+		987FD0B71CC1714D00E77CBB /* AuditionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditionListViewController.swift; sourceTree = "<group>"; };
+		987FD0B91CC173BB00E77CBB /* AuditionStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuditionStore.swift; sourceTree = "<group>"; };
 		98F3D9CA1CB4957E008BF80F /* auditionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = auditionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98F3D9CD1CB4957E008BF80F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		98F3D9CF1CB4957E008BF80F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		98F3D9CF1CB4957E008BF80F /* AuditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditionViewController.swift; sourceTree = "<group>"; };
 		98F3D9D21CB4957E008BF80F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		98F3D9D41CB4957E008BF80F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98F3D9D71CB4957E008BF80F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,8 +61,10 @@
 			isa = PBXGroup;
 			children = (
 				98F3D9CD1CB4957E008BF80F /* AppDelegate.swift */,
-				98F3D9CF1CB4957E008BF80F /* ViewController.swift */,
+				98F3D9CF1CB4957E008BF80F /* AuditionViewController.swift */,
 				98F3D9D11CB4957E008BF80F /* Main.storyboard */,
+				987FD0B71CC1714D00E77CBB /* AuditionListViewController.swift */,
+				987FD0B91CC173BB00E77CBB /* AuditionStore.swift */,
 				98707A011CB82D5500F54128 /* Audition.swift */,
 				98F3D9D41CB4957E008BF80F /* Assets.xcassets */,
 				98F3D9D61CB4957E008BF80F /* LaunchScreen.storyboard */,
@@ -138,9 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98F3D9D01CB4957E008BF80F /* ViewController.swift in Sources */,
+				98F3D9D01CB4957E008BF80F /* AuditionViewController.swift in Sources */,
 				98F3D9CE1CB4957E008BF80F /* AppDelegate.swift in Sources */,
+				987FD0B81CC1714D00E77CBB /* AuditionListViewController.swift in Sources */,
 				98707A021CB82D5500F54128 /* Audition.swift in Sources */,
+				987FD0BA1CC173BB00E77CBB /* AuditionStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
