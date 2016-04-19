@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  auditionApp
 //
-//  Created by Neill Chua on 4/5/16.
+//  Created by Neill Chua and Sameehan Patel on 4/5/16.
 //  Copyright © 2016 Neill Chua. All rights reserved.
 //
 
