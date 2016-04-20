@@ -134,7 +134,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CVg-3T-Mg0">
                             <connections>
                                 <action selector="addItem:" destination="jG2-F7-uqM" id="iLA-1h-WEv"/>
-                                <segue destination="BYZ-38-t0r" kind="show" id="Pfr-DX-nne"/>
+                                <segue destination="BYZ-38-t0r" kind="show" id="ui4-TO-tzu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
