@@ -13,9 +13,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
+    let auditionStore = AuditionStore()
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        let navController = window!.rootViewController as! UINavigationController
+        let auditionsController = navController.topViewController as! AuditionListViewController
+        ///auditionsController.auditionStore = auditionStore
+
+        
         return true
     }
 
