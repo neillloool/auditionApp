@@ -62,10 +62,10 @@
 			children = (
 				98F3D9CD1CB4957E008BF80F /* AppDelegate.swift */,
 				98F3D9CF1CB4957E008BF80F /* AuditionViewController.swift */,
-				98F3D9D11CB4957E008BF80F /* Main.storyboard */,
 				987FD0B71CC1714D00E77CBB /* AuditionListViewController.swift */,
 				987FD0B91CC173BB00E77CBB /* AuditionStore.swift */,
 				98707A011CB82D5500F54128 /* Audition.swift */,
+				98F3D9D11CB4957E008BF80F /* Main.storyboard */,
 				98F3D9D41CB4957E008BF80F /* Assets.xcassets */,
 				98F3D9D61CB4957E008BF80F /* LaunchScreen.storyboard */,
 				98F3D9D91CB4957E008BF80F /* Info.plist */,

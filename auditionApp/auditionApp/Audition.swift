@@ -9,18 +9,20 @@
 import Foundation
 
 class Audition:NSObject, NSCoding {
-    var count:Int
-    var name: String?
+    //var count:Int
+    var name: String!
     let itemKey: String
     
     init(name:String){
-        self.count = 0
+        print("Sam 3")
         self.name = name
         self.itemKey = NSUUID().UUIDString
+        
         super.init()
     }
     
     convenience override init(){
+        print("Sam 2")
         let blankName = ""
         self.init(name:blankName)
     }
@@ -28,14 +30,13 @@ class Audition:NSObject, NSCoding {
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(name, forKey:"name")
         aCoder.encodeObject(itemKey, forKey:"auditionKey")
-        aCoder.encodeInteger(count, forKey: "count")
         
     }
     
     required init(coder aDecoder: NSCoder){
+        print("Sam 1")
         name = aDecoder.decodeObjectForKey("name") as! String
         itemKey = aDecoder.decodeObjectForKey("auditionKey") as! String
-        count = aDecoder.decodeIntegerForKey("count")
         super.init()
     }
     

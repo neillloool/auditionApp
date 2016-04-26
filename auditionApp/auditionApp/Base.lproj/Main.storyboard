@@ -71,6 +71,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addAudition" destination="7cm-SD-IsN" id="ekd-gt-4nW"/>
                         <outlet property="auditionName" destination="xxE-iW-ULN" id="x46-oi-asC"/>
                         <outlet property="notes" destination="SJM-OG-DQW" id="DWL-4K-jGs"/>
                     </connections>
@@ -88,7 +89,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="px2-SQ-qjq">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UITableViewCell" id="px2-SQ-qjq">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="px2-SQ-qjq" id="a5I-fq-yxo">
@@ -119,15 +120,15 @@
                     <navigationItem key="navigationItem" title="Audition" id="KdH-FQ-2Wi">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CVg-3T-Mg0">
                             <connections>
-                                <action selector="addItem:" destination="jG2-F7-uqM" id="iLA-1h-WEv"/>
-                                <segue destination="Zrz-O7-ZDt" kind="show" id="1LA-Pz-PrK"/>
+                                <action selector="addAudition:" destination="jG2-F7-uqM" id="NHC-hx-08x"/>
+                                <segue destination="Zrz-O7-ZDt" kind="show" identifier="ShowAudition" id="yMU-DP-NGo"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4R9-2v-0J0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1204" y="1167"/>
+            <point key="canvasLocation" x="-1214" y="1137"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FYQ-eP-G6N">

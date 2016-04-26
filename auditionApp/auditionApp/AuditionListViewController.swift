@@ -12,11 +12,12 @@ import UIKit
 
 class AuditionListViewController: UITableViewController {
     
+    var audition: Audition!
     var auditionStore: AuditionStore!
     
     /// have to add this before we connect to allow addAudition
     @IBAction func addAudition(sender: AnyObject) {
-        var newAudition = Audition(name: "New Audition")
+        let newAudition = Audition(name: "New Audition")
         auditionStore.addAudition(newAudition)
         tableView.reloadData()
     }
@@ -26,29 +27,31 @@ class AuditionListViewController: UITableViewController {
         
         navigationItem.leftBarButtonItem = editButtonItem()
     }
+
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("UITableViewCell", forIndexPath: indexPath)
         
         let item = auditionStore.allAuditions[indexPath.row]
-//        cell.textLabel?.text = auditionName.name
-//        cell.detailTextLabel?.text = "\(audition.count)"
+        
+        cell.textLabel?.text = item.name
+        //cell.detailTextLabel?.text = "\(audition.count)"
         
         return cell
     }
 
-   /*
+   
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return auditionStore.allAuditions.count
     }
-    */
+ 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowAudition" {
-            if let row = tableView.indexPathForSelectedRow?.row {
-                let audition = auditionStore.allAuditions[row]
+                print(auditionStore.allAuditions.count)
                 let auditionViewController = segue.destinationViewController as! AuditionViewController
-                auditionViewController.audition = audition
+                //auditionViewController.audition = audition
+                auditionViewController.auditionstore = auditionStore
             }
-        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -56,21 +59,6 @@ class AuditionListViewController: UITableViewController {
         tableView.reloadData()
     }
     
-    @IBAction func toggleEditingMode(sender: AnyObject) {
-        // If you are currently in editing mode...
-        if editing {
-            // Change text of button to inform user of state
-            sender.setTitle("Edit", forState: .Normal)
-            
-            // Turn off editing mode
-            setEditing(false, animated: true)
-        }
-        else {
-            // Change text of button to inform user of state
-            sender.setTitle("Done", forState: .Normal)
-            
-            // Enter editing mode
-            setEditing(true, animated: true)
-        }
+  
     
 }
