@@ -10,10 +10,13 @@ import UIKit
 
 class AuditionViewController: UIViewController {
 
-    //var audition: Audition!
+    var audition: Audition!
     var auditionstore: AuditionStore!
+    var decision: String!
     
     @IBOutlet var notes: UITextView!
+    
+    @IBOutlet var auditionDecision: UISegmentedControl!
     
     @IBOutlet var auditionName: UITextField!
    
@@ -37,9 +40,12 @@ class AuditionViewController: UIViewController {
         super.viewWillDisappear(animated)
         //audition.name = "Sam"
         let nameValue = auditionName.text!
-        let newAudition = Audition(name: nameValue)
+        let decision = auditionDecision.titleForSegmentAtIndex(auditionDecision.selectedSegmentIndex)!
+        let note = notes.text!
+        print(auditionDecision.titleForSegmentAtIndex(auditionDecision.selectedSegmentIndex)!)
+        let newAudition = Audition(name: nameValue, decision: decision)
         auditionstore.addAudition(newAudition)
-        print(auditionName.text!)
+        print(decision)
         print(auditionstore.allAuditions.count)
         //print(audition.name)
     }

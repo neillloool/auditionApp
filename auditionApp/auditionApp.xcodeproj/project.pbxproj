@@ -61,9 +61,9 @@
 			isa = PBXGroup;
 			children = (
 				98F3D9CD1CB4957E008BF80F /* AppDelegate.swift */,
-				98F3D9CF1CB4957E008BF80F /* AuditionViewController.swift */,
 				987FD0B71CC1714D00E77CBB /* AuditionListViewController.swift */,
 				987FD0B91CC173BB00E77CBB /* AuditionStore.swift */,
+				98F3D9CF1CB4957E008BF80F /* AuditionViewController.swift */,
 				98707A011CB82D5500F54128 /* Audition.swift */,
 				98F3D9D11CB4957E008BF80F /* Main.storyboard */,
 				98F3D9D41CB4957E008BF80F /* Assets.xcassets */,
@@ -105,6 +105,7 @@
 				TargetAttributes = {
 					98F3D9C91CB4957E008BF80F = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = E3K78F65F5;
 					};
 				};
 			};
@@ -259,10 +260,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = auditionApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.neillchua.auditionApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -270,10 +274,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = auditionApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.neillchua.auditionApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

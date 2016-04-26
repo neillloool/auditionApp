@@ -15,9 +15,10 @@ class AuditionListViewController: UITableViewController {
     var audition: Audition!
     var auditionStore: AuditionStore!
     
+    
     /// have to add this before we connect to allow addAudition
     @IBAction func addAudition(sender: AnyObject) {
-        let newAudition = Audition(name: "New Audition")
+        let newAudition = Audition(name: "New Audition",decision: "Yes")
         auditionStore.addAudition(newAudition)
         tableView.reloadData()
     }
@@ -33,10 +34,13 @@ class AuditionListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("UITableViewCell", forIndexPath: indexPath)
         
         let item = auditionStore.allAuditions[indexPath.row]
-        
+        print(item.decision)
+        print(cell.textLabel?.text)
+        print(cell.detailTextLabel?.text)
         cell.textLabel?.text = item.name
-        //cell.detailTextLabel?.text = "\(audition.count)"
-        
+        cell.detailTextLabel?.text = "\(item.decision)"
+        print(cell.textLabel?.text)
+        print(cell.detailTextLabel?.text)
         return cell
     }
 
@@ -49,16 +53,31 @@ class AuditionListViewController: UITableViewController {
         if segue.identifier == "ShowAudition" {
                 print(auditionStore.allAuditions.count)
                 let auditionViewController = segue.destinationViewController as! AuditionViewController
-                //auditionViewController.audition = audition
+                auditionViewController.audition = audition
                 auditionViewController.auditionstore = auditionStore
             }
+
+//        if segue.identifier == "ShowDetailAudition" {
+//            if let row = tableView.indexPathForSelectedRow?.row {
+//                let audition = auditionStore.allAuditions[row]
+//                let auditionViewController = segue.destinationViewController as! AuditionViewController
+//               auditionViewController.audition = audition
+//           }
+//        }
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
-    
+    /*override func tableView(tableView:UITableView,commitEditingStyle editingStyle:UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
+        if editingStyle == .Delete {
+            let audition = AuditionStore.addAudition[indexPath.row]
+            AuditionStore.removeItem(audition)
+            
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: <#T##UITableViewRowAnimation#>)
+        }
+    }*/
   
     
 }
