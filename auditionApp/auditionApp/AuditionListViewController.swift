@@ -30,9 +30,8 @@ class AuditionListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("UITableViewCell", forIndexPath: indexPath)
         
         let item = auditionStore.allAuditions[indexPath.row]
-        
-        ///cell.textLabel?.text = auditionName.name
-        //cell.detailTextLabel?.text = "\(audition.count)"
+//        cell.textLabel?.text = auditionName.name
+//        cell.detailTextLabel?.text = "\(audition.count)"
         
         return cell
     }
@@ -57,5 +56,21 @@ class AuditionListViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    @IBAction func toggleEditingMode(sender: AnyObject) {
+        // If you are currently in editing mode...
+        if editing {
+            // Change text of button to inform user of state
+            sender.setTitle("Edit", forState: .Normal)
+            
+            // Turn off editing mode
+            setEditing(false, animated: true)
+        }
+        else {
+            // Change text of button to inform user of state
+            sender.setTitle("Done", forState: .Normal)
+            
+            // Enter editing mode
+            setEditing(true, animated: true)
+        }
     
 }

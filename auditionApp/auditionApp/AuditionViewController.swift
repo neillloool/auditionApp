@@ -22,10 +22,10 @@ class AuditionViewController: UIViewController {
         super.viewDidLoad()
         
         
-        super.viewDidLoad()
-        print(audition.name)
-        if audition.name != "" {
-            auditionName!.text = audition.name
+ //       super.viewDidLoad()
+//        print(audition.name)
+//        if audition.name != "" {
+//            auditionName!.text = audition.name
         }
         
         
@@ -34,19 +34,19 @@ class AuditionViewController: UIViewController {
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        audition.name = auditionName!.text
-    }
+//    override func didReceiveMemoryWarning() {
+//        super.didReceiveMemoryWarning()
+//        // Dispose of any resources that can be recreated.
+//    }
+//    
+//    override func viewWillDisappear(animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        audition.name = auditionName!.text
+//    }
 
     
         
     
     
-}
+
 
