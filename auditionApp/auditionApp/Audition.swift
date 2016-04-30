@@ -13,6 +13,7 @@ class Audition:NSObject{
     var name: String!
     var decision: String!
     var auditionNotes:String!
+    let itemKey: String!
     
     init(name:String, decision: String, auditionNotes: String){
         print("Sam 3")
@@ -20,6 +21,7 @@ class Audition:NSObject{
         self.name = name
         self.decision = decision
         self.auditionNotes = auditionNotes
+        self.itemKey = NSUUID().UUIDString
             
         super.init()
     }
@@ -30,17 +32,20 @@ class Audition:NSObject{
     }
 
 
-//    func encodeWithCoder(aCoder: NSCoder) {
-//        aCoder.encodeObject(name, forKey:"name")
-//        aCoder.encodeObject(itemKey, forKey:"auditionKey")
-//        
-//    }
-//    
-//    required init(coder aDecoder: NSCoder){
-//        print("Sam 1")
-//        name = aDecoder.decodeObjectForKey("name") as! String
-//        itemKey = aDecoder.decodeObjectForKey("auditionKey") as! String
-//        super.init()
-//    }
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(name, forKey:"name")
+        aCoder.encodeObject(decision, forKey:"decision")
+        aCoder.encodeObject(itemKey, forKey:"itemKey")
+        
+    }
+    
+    
+    required init(coder aDecoder: NSCoder){
+        print("Sam 1")
+        name = aDecoder.decodeObjectForKey("name") as! String
+        decision = aDecoder.decodeObjectForKey("decision") as! String
+        itemKey = aDecoder.decodeObjectForKey("auditionKey") as! String
+        super.init()
+    }
     
 }

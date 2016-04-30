@@ -15,7 +15,6 @@
 		98F3D9D31CB4957E008BF80F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F3D9D11CB4957E008BF80F /* Main.storyboard */; };
 		98F3D9D51CB4957E008BF80F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98F3D9D41CB4957E008BF80F /* Assets.xcassets */; };
 		98F3D9D81CB4957E008BF80F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F3D9D61CB4957E008BF80F /* LaunchScreen.storyboard */; };
-		F7FA2EC81CD0332E00B3409E /* DetailAuditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7FA2EC71CD0332E00B3409E /* DetailAuditionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +28,6 @@
 		98F3D9D41CB4957E008BF80F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98F3D9D71CB4957E008BF80F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98F3D9D91CB4957E008BF80F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F7FA2EC71CD0332E00B3409E /* DetailAuditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailAuditionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +62,9 @@
 			children = (
 				98F3D9CD1CB4957E008BF80F /* AppDelegate.swift */,
 				987FD0B71CC1714D00E77CBB /* AuditionListViewController.swift */,
-				987FD0B91CC173BB00E77CBB /* AuditionStore.swift */,
 				98F3D9CF1CB4957E008BF80F /* AuditionViewController.swift */,
+				987FD0B91CC173BB00E77CBB /* AuditionStore.swift */,
 				98707A011CB82D5500F54128 /* Audition.swift */,
-				F7FA2EC71CD0332E00B3409E /* DetailAuditionViewController.swift */,
 				98F3D9D11CB4957E008BF80F /* Main.storyboard */,
 				98F3D9D41CB4957E008BF80F /* Assets.xcassets */,
 				98F3D9D61CB4957E008BF80F /* LaunchScreen.storyboard */,
@@ -151,7 +148,6 @@
 				98F3D9D01CB4957E008BF80F /* AuditionViewController.swift in Sources */,
 				98F3D9CE1CB4957E008BF80F /* AppDelegate.swift in Sources */,
 				987FD0B81CC1714D00E77CBB /* AuditionListViewController.swift in Sources */,
-				F7FA2EC81CD0332E00B3409E /* DetailAuditionViewController.swift in Sources */,
 				98707A021CB82D5500F54128 /* Audition.swift in Sources */,
 				987FD0BA1CC173BB00E77CBB /* AuditionStore.swift in Sources */,
 			);

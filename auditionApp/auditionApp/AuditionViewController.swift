@@ -26,11 +26,10 @@ class AuditionViewController: UIViewController {
     
 //    override func viewDidLoad() {
 //        super.viewDidLoad()
-//       // print(audition.name)
 //        if audition.name != "" {
 //        auditionName!.text = audition.name
-//        }
-//
+//     }
+
 //    }
 
     override func didReceiveMemoryWarning() {
@@ -52,8 +51,8 @@ class AuditionViewController: UIViewController {
 //        print(auditionstore.allAuditions.count)
 //        print(audition.name)
     }
-
     
+
 }
     
     

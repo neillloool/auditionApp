@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class AuditionListViewController: UITableViewController {
     
     var audition: Audition!
@@ -51,19 +49,28 @@ class AuditionListViewController: UITableViewController {
  
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowAudition" {
-                print(auditionStore.allAuditions.count)
+                   print(auditionStore.allAuditions.count)
                 let auditionViewController = segue.destinationViewController as! AuditionViewController
+            
+            //generating cell at this segue
+            
                 auditionViewController.audition = audition
                 auditionViewController.auditionstore = auditionStore
             }
 
-        if segue.identifier == "ShowDetailAudition" {
-            if let row = tableView.indexPathForSelectedRow?.row {
-               let audition = auditionStore.allAuditions[row]
-                let auditionViewController = segue.destinationViewController as! AuditionViewController
-                auditionViewController.audition = audition
-           }
-       }
+//                // Get the cell that generated this segue.
+//                if let selectedMealCell = sender as? MealTableViewCell {
+//                    let indexPath = tableView.indexPathForCell(selectedMealCell)!
+//                    let selectedMeal = meals[indexPath.row]
+//                    mealDetailViewController.meal = selectedMeal
+//                }
+//            }
+//            else if segue.identifier == "AddItem" {
+//                print("Adding new meal.")
+//            }
+//        }
+//        
+        
     }
     
     override func viewWillAppear(animated: Bool) {

@@ -16,7 +16,6 @@ class AuditionStore {
         }
     }
     
-    // var allItems = [Item]()
     
     var allAuditions = [Audition]()
     
