@@ -12,6 +12,8 @@ class AuditionListViewController: UITableViewController {
     
     var audition: Audition!
     var auditionStore: AuditionStore!
+    var decisionColor: Int?
+    var auditionDecision: UISegmentedControl!
     
     
     /// have to add this before we connect to allow addAudition
@@ -44,6 +46,20 @@ class AuditionListViewController: UITableViewController {
 
    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        //adding color to the row according to the decision
+        
+//        var decisionColor = auditionDecision.titleForSegmentAtIndex(auditionDecision.selectedSegmentIndex)!
+//        if auditionDecision = 0 {
+//            cell.backgroundColor = UIColor.greenColor()}
+//        if decisionColor = 1 {
+//            cell.backgroundColor = UIColor.yellowColor()}
+//        if decisionColor = 2 {
+//            cell.backgroundColor = UIColor.redColor()}
+        
+        
+        
+        
         return auditionStore.allAuditions.count
     }
  
