@@ -18,7 +18,7 @@ class AuditionListViewController: UITableViewController {
     
     /// have to add this before we connect to allow addAudition
     @IBAction func addAudition(sender: AnyObject) {
-        let newAudition = Audition(name: "New Audition",decision: "Yes")
+        let newAudition = Audition(name: "New Audition",decision: "Yes", auditionNotes: "Notes")
         auditionStore.addAudition(newAudition)
         tableView.reloadData()
     }
@@ -57,13 +57,13 @@ class AuditionListViewController: UITableViewController {
                 auditionViewController.auditionstore = auditionStore
             }
 
-//        if segue.identifier == "ShowDetailAudition" {
-//            if let row = tableView.indexPathForSelectedRow?.row {
-//                let audition = auditionStore.allAuditions[row]
-//                let auditionViewController = segue.destinationViewController as! AuditionViewController
-//               auditionViewController.audition = audition
-//           }
-//        }
+        if segue.identifier == "ShowDetailAudition" {
+            if let row = tableView.indexPathForSelectedRow?.row {
+               let audition = auditionStore.allAuditions[row]
+                let auditionViewController = segue.destinationViewController as! AuditionViewController
+                auditionViewController.audition = audition
+           }
+       }
     }
     
     override func viewWillAppear(animated: Bool) {

@@ -13,6 +13,8 @@ class AuditionViewController: UIViewController {
     var audition: Audition!
     var auditionstore: AuditionStore!
     var decision: String!
+   
+    
     
     @IBOutlet var notes: UITextView!
     
@@ -22,15 +24,15 @@ class AuditionViewController: UIViewController {
    
     @IBOutlet var addAudition: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //print(audition.name)
-        //if audition.name != "" {
-          //  auditionName!.text = audition.name
-        //}
-        
-    }
-    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//       // print(audition.name)
+//        if audition.name != "" {
+//        auditionName!.text = audition.name
+//        }
+//
+//    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -41,13 +43,14 @@ class AuditionViewController: UIViewController {
         //audition.name = "Sam"
         let nameValue = auditionName.text!
         let decision = auditionDecision.titleForSegmentAtIndex(auditionDecision.selectedSegmentIndex)!
-        let note = notes.text!
+        let auditionNotes = notes.text!
         print(auditionDecision.titleForSegmentAtIndex(auditionDecision.selectedSegmentIndex)!)
-        let newAudition = Audition(name: nameValue, decision: decision)
+        let newAudition = Audition(name: nameValue, decision: decision, auditionNotes: auditionNotes)
         auditionstore.addAudition(newAudition)
-        print(decision)
-        print(auditionstore.allAuditions.count)
-        //print(audition.name)
+//        print(decision)
+//        print(notes)
+//        print(auditionstore.allAuditions.count)
+//        print(audition.name)
     }
 
     
