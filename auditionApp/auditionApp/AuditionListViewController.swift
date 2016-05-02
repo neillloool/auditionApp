@@ -12,7 +12,7 @@ class AuditionListViewController: UITableViewController {
     
     var audition: Audition!
     var auditionStore: AuditionStore!
-    
+    var auditions = [Audition]()
     
     /// have to add this before we connect to allow addAudition
     @IBAction func addAudition(sender: AnyObject) {
@@ -31,52 +31,68 @@ class AuditionListViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("UITableViewCell", forIndexPath: indexPath)
         
-        let item = auditionStore.allAuditions[indexPath.row]
-        print(item.decision)
-        print(cell.textLabel?.text)
-        print(cell.detailTextLabel?.text)
+        let item = auditions[indexPath.row]
+     
         cell.textLabel?.text = item.name
         cell.detailTextLabel?.text = "\(item.decision)"
-        print(cell.textLabel?.text)
-        print(cell.detailTextLabel?.text)
+       
         return cell
     }
 
    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return auditionStore.allAuditions.count
+        return auditions.count
     }
  
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowAudition" {
-                   print(auditionStore.allAuditions.count)
                 let auditionViewController = segue.destinationViewController as! AuditionViewController
-            
-            //generating cell at this segue
-            
-                auditionViewController.audition = audition
-                auditionViewController.auditionstore = auditionStore
+            if let selectedAuditionCell = sender as? AuditionTableViewCell{
+                let indexPath = tableView.indexPathForCell(selectedAuditionCell)!
+                let selectedAudition = auditions[indexPath.row]
+                auditionViewController.audition = selectedAudition
+            }
+           
             }
 
-//                // Get the cell that generated this segue.
-//                if let selectedMealCell = sender as? MealTableViewCell {
-//                    let indexPath = tableView.indexPathForCell(selectedMealCell)!
-//                    let selectedMeal = meals[indexPath.row]
-//                    mealDetailViewController.meal = selectedMeal
-//                }
-//            }
-//            else if segue.identifier == "AddItem" {
-//                print("Adding new meal.")
-//            }
-//        }
-//        
+
+            else if segue.identifier == "AddItem" {
+                print("Adding new audition.")
+            }
         
-    }
+}
+
+
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
+    
+    @IBAction func unwindToAuditionList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.sourceViewController as? AuditionViewController, audition = sourceViewController.audition {
+            if let selectedIndexPath = tableView.indexPathForSelectedRow{
+                
+                // Update an existing audition.
+                
+                auditions[selectedIndexPath.row] = audition
+                tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+
+            }
+             
+            else {
+                
+                // Add a new audition.
+                let newIndexPath = NSIndexPath(forRow: auditions.count, inSection: 0)
+                auditions.append(audition)
+                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+                
+                }
+    
+            }
+        }
+    
+    
     /*override func tableView(tableView:UITableView,commitEditingStyle editingStyle:UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
         if editingStyle == .Delete {
             let audition = AuditionStore.addAudition[indexPath.row]
@@ -86,5 +102,5 @@ class AuditionListViewController: UITableViewController {
         }
     }*/
   
-    
 }
+

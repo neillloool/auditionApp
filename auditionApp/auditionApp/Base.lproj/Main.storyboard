@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oSZ-Vg-3Zs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10102" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oSZ-Vg-3Zs">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10080"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -33,10 +33,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cm-SD-IsN">
-                                <rect key="frame" x="495" y="538" width="22" height="22"/>
-                                <size key="titleShadowOffset" width="2.2250738585072014e-308" height="0.0"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRx-BN-KP5">
                                 <rect key="frame" x="60" y="86" width="45" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -59,10 +55,8 @@
                             <constraint firstItem="lRx-BN-KP5" firstAttribute="baseline" secondItem="xxE-iW-ULN" secondAttribute="baseline" id="D3q-vk-wUB"/>
                             <constraint firstItem="lRx-BN-KP5" firstAttribute="leading" secondItem="4vC-uD-qxG" secondAttribute="leadingMargin" constant="40" id="GlH-LE-SFG"/>
                             <constraint firstItem="xxE-iW-ULN" firstAttribute="leading" secondItem="lRx-BN-KP5" secondAttribute="trailing" constant="8" symbolic="YES" id="IBA-TL-fo5"/>
-                            <constraint firstItem="SJM-OG-DQW" firstAttribute="trailing" secondItem="7cm-SD-IsN" secondAttribute="trailing" id="La9-8P-sT7"/>
                             <constraint firstItem="xxE-iW-ULN" firstAttribute="top" secondItem="ZOU-bC-JgM" secondAttribute="bottom" constant="15" id="VdK-Jv-UF5"/>
                             <constraint firstItem="lRx-BN-KP5" firstAttribute="top" secondItem="ZOU-bC-JgM" secondAttribute="bottom" constant="22" id="W0g-uW-UbN"/>
-                            <constraint firstItem="7cm-SD-IsN" firstAttribute="top" secondItem="SJM-OG-DQW" secondAttribute="bottom" constant="47" id="Zrr-pM-XrB"/>
                             <constraint firstItem="Eja-4M-gIo" firstAttribute="centerX" secondItem="4vC-uD-qxG" secondAttribute="centerX" id="ap0-4f-xkF"/>
                             <constraint firstItem="Eja-4M-gIo" firstAttribute="top" secondItem="xxE-iW-ULN" secondAttribute="bottom" constant="26" id="odO-Rm-1lm"/>
                             <constraint firstItem="Eja-4M-gIo" firstAttribute="trailing" secondItem="SJM-OG-DQW" secondAttribute="trailing" id="u8l-Za-ScA"/>
@@ -70,17 +64,30 @@
                             <constraint firstItem="SJM-OG-DQW" firstAttribute="leading" secondItem="4vC-uD-qxG" secondAttribute="leadingMargin" constant="63" id="zYs-ha-Yfi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="esh-JP-D2C"/>
+                    <navigationItem key="navigationItem" title="New Audition" id="esh-JP-D2C">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ldL-o9-Exj">
+                            <connections>
+                                <action selector="cancel:" destination="Zrz-O7-ZDt" id="l1e-xd-Fh9"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="WQB-5q-9NY">
+                            <connections>
+                                <segue destination="BdC-1Z-dXS" kind="unwind" unwindAction="unwindToAuditionList:" id="xu4-wO-UvN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="addAudition" destination="7cm-SD-IsN" id="ekd-gt-4nW"/>
                         <outlet property="auditionDecision" destination="Eja-4M-gIo" id="g0a-8r-jcs"/>
                         <outlet property="auditionName" destination="xxE-iW-ULN" id="x46-oi-asC"/>
+                        <outlet property="cancel" destination="ldL-o9-Exj" id="ldM-z5-Nb0"/>
                         <outlet property="notes" destination="SJM-OG-DQW" id="DWL-4K-jGs"/>
+                        <outlet property="saveButton" destination="WQB-5q-9NY" id="tIz-Pf-ALB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kCK-GR-y8v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="BdC-1Z-dXS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="266" y="-545"/>
+            <point key="canvasLocation" x="-78" y="-531"/>
         </scene>
         <!--Audition-->
         <scene sceneID="vlZ-hP-6jL">
@@ -91,7 +98,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UITableViewCell" textLabel="awF-jl-vBj" detailTextLabel="WGY-GD-ODB" style="IBUITableViewCellStyleValue1" id="px2-SQ-qjq">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UITableViewCell" textLabel="awF-jl-vBj" detailTextLabel="WGY-GD-ODB" style="IBUITableViewCellStyleValue1" id="px2-SQ-qjq" customClass="AuditionTableViewCell" customModule="auditionApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="px2-SQ-qjq" id="a5I-fq-yxo">
@@ -115,7 +122,9 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="R4R-wu-VpR" kind="presentation" identifier="AddAudition" trigger="accessoryAction" id="M4i-me-6WO"/>
+                                    <outlet property="decisionLabel" destination="WGY-GD-ODB" id="vYy-Gf-uX0"/>
+                                    <outlet property="nameLabel" destination="awF-jl-vBj" id="4Xl-x5-A38"/>
+                                    <segue destination="Zrz-O7-ZDt" kind="show" identifier="ShowDetail" id="kNf-xS-KK3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -128,7 +137,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="CVg-3T-Mg0">
                             <connections>
                                 <action selector="addAudition:" destination="jG2-F7-uqM" id="NHC-hx-08x"/>
-                                <segue destination="Zrz-O7-ZDt" kind="show" identifier="ShowAudition" id="yMU-DP-NGo"/>
+                                <segue destination="eo7-T0-ZFl" kind="presentation" identifier="AddItem" id="kfx-au-moH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -154,23 +163,25 @@
             <point key="canvasLocation" x="-1580" y="-545"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="7Ot-Dh-NrP">
+        <scene sceneID="WYt-BT-j5D">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WOA-Qc-Jam" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController id="R4R-wu-VpR" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LRC-Cv-fOU">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eo7-T0-ZFl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wZU-hq-N3L">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Zrz-O7-ZDt" kind="relationship" relationship="rootViewController" id="6PJ-SB-zYj"/>
+                        <segue destination="Zrz-O7-ZDt" kind="relationship" relationship="rootViewController" id="c5h-u9-2aw"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eqs-pj-hmS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-468" y="331"/>
+            <point key="canvasLocation" x="-514" y="221"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="yMU-DP-NGo"/>
+        <segue reference="kNf-xS-KK3"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -15,6 +15,9 @@ class Audition:NSObject{
     var auditionNotes:String!
     let itemKey: String!
     
+    
+    //mark: initialize variables 
+    
     init(name:String, decision: String, auditionNotes: String){
         print("Sam 3")
         print(decision)
