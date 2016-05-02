@@ -45,6 +45,17 @@ class AuditionViewController: UIViewController, UITextFieldDelegate, UIImagePick
     
     @IBAction func cancel(sender: UIBarButtonItem){
         dismissViewControllerAnimated(true, completion: nil)
+        
+        let isPresentingInAddMealMode = presentingViewController is UINavigationController
+        
+        if isPresentingInAddMealMode {
+            dismissViewControllerAnimated(true, completion: nil)
+        }
+        else {
+            navigationController!.popViewControllerAnimated(true)
+        }
+    
+        
     }
 
 
