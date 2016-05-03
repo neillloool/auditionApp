@@ -12,13 +12,12 @@ class AuditionListViewController: UITableViewController {
     
     var audition: Audition!
     var auditionStore: AuditionStore!
-    var decisionColor: Int?
     var auditionDecision: UISegmentedControl!
-    
+    var auditions = [Audition]()
     
     /// have to add this before we connect to allow addAudition
     @IBAction func addAudition(sender: AnyObject) {
-        let newAudition = Audition(name: "New Audition",decision: "Yes", auditionNotes: "Notes")
+        let newAudition = Audition(name: "Audition",decision: "Maybe", auditionNotes: "Notes")
         auditionStore.addAudition(newAudition)
         tableView.reloadData()
     }
@@ -28,79 +27,97 @@ class AuditionListViewController: UITableViewController {
         
         navigationItem.leftBarButtonItem = editButtonItem()
     }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    
+        return true
+    }
+    
+    
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            
+            auditions.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+        } else if editingStyle == .Insert {
+        }
+    }
 
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("UITableViewCell", forIndexPath: indexPath)
         
-        let item = auditionStore.allAuditions[indexPath.row]
-        print(item.decision)
-        print(cell.textLabel?.text)
-        print(cell.detailTextLabel?.text)
+        let item = auditions[indexPath.row]
+     
         cell.textLabel?.text = item.name
         cell.detailTextLabel?.text = "\(item.decision)"
-        print(cell.textLabel?.text)
-        print(cell.detailTextLabel?.text)
+        
+        //adding color to the row according to the decision
+        if item.decision == "Yes" {
+            cell.backgroundColor = UIColor.greenColor()}
+        else if item.decision == "Maybe" {
+            cell.backgroundColor = UIColor.yellowColor()}
+        else if item.decision == "No" {
+            cell.backgroundColor = UIColor.redColor()}
+        
+        
+       
         return cell
     }
 
    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        //adding color to the row according to the decision
-        
-//        var decisionColor = auditionDecision.titleForSegmentAtIndex(auditionDecision.selectedSegmentIndex)!
-//        if auditionDecision = 0 {
-//            cell.backgroundColor = UIColor.greenColor()}
-//        if decisionColor = 1 {
-//            cell.backgroundColor = UIColor.yellowColor()}
-//        if decisionColor = 2 {
-//            cell.backgroundColor = UIColor.redColor()}
-        
-        
-        
-        
-        return auditionStore.allAuditions.count
+            return auditions.count
     }
  
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowAudition" {
-                   print(auditionStore.allAuditions.count)
                 let auditionViewController = segue.destinationViewController as! AuditionViewController
             
-            //generating cell at this segue
-            
-                auditionViewController.audition = audition
-                auditionViewController.auditionstore = auditionStore
+            if let selectedAuditionCell = sender as? AuditionTableViewCell{
+                let indexPath = tableView.indexPathForCell(selectedAuditionCell)!
+                let selectedAudition = auditions[indexPath.row]
+                auditionViewController.audition = selectedAudition
             }
-
-//                // Get the cell that generated this segue.
-//                if let selectedMealCell = sender as? MealTableViewCell {
-//                    let indexPath = tableView.indexPathForCell(selectedMealCell)!
-//                    let selectedMeal = meals[indexPath.row]
-//                    mealDetailViewController.meal = selectedMeal
-//                }
-//            }
-//            else if segue.identifier == "AddItem" {
-//                print("Adding new meal.")
-//            }
-//        }
-//        
-        
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        tableView.reloadData()
-    }
-    /*override func tableView(tableView:UITableView,commitEditingStyle editingStyle:UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath){
-        if editingStyle == .Delete {
-            let audition = AuditionStore.addAudition[indexPath.row]
-            AuditionStore.removeItem(audition)
+           
             
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: <#T##UITableViewRowAnimation#>)
         }
-    }*/
-  
-    
+
+            else if segue.identifier == "AddItem" {
+                print("Adding new audition.")
+            }
+        
+        
 }
+
+
+    @IBAction func unwindToAuditionList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.sourceViewController as? AuditionViewController, audition = sourceViewController.audition {
+            if let selectedIndexPath = tableView.indexPathForSelectedRow{
+                
+                // Update an existing audition.
+                
+                auditions[selectedIndexPath.row] = audition
+                tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+
+            }
+             
+            else {
+                
+                // Add a new audition.
+                
+                let newIndexPath = NSIndexPath(forRow: auditions.count, inSection: 0)
+                auditions.append(audition)
+                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+                
+                }
+    
+            }
+        }
+    
+    
+  
+}
+

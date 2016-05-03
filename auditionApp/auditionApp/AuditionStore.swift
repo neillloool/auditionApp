@@ -35,8 +35,4 @@ class AuditionStore {
         return NSKeyedArchiver.archiveRootObject(allAuditions, toFile: auditionArchiveURL.path!)
     }
     
-    /*func removeAudition(item:Audition){
-        if let index = allAuditions.indexOf(<#T##element: Audition##Audition#>){
-            allAuditions.removeAtIndex(index)}
-    }*/
 }

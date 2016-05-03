@@ -9,14 +9,13 @@
 import Foundation
 
 class Audition:NSObject{
-    //var count:Int
     var name: String!
     var decision: String!
     var auditionNotes:String!
     let itemKey: String!
     
+    
     init(name:String, decision: String, auditionNotes: String){
-        print("Sam 3")
         print(decision)
         self.name = name
         self.decision = decision
