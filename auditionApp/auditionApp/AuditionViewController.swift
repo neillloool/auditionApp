@@ -26,7 +26,9 @@ class AuditionViewController: UIViewController, UITextFieldDelegate, UIImagePick
     override func viewDidLoad() {
         super.viewDidLoad()
         auditionName.delegate = self
-    
+        
+    // stackoverflow.com/questions/14494663/change-uisegmentedcontrol-selected-index-or-value-programatically
+    // figure out the segment controls
         if let audition = audition {
             auditionName.text = audition.name
             notes.text = audition.auditionNotes

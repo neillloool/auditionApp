@@ -22,6 +22,9 @@ class AuditionListViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    
+    //stackoverflow.com/questions/7385835/uitableview-edit-done-button
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -34,7 +37,8 @@ class AuditionListViewController: UITableViewController {
     }
     
     
-    
+    // stackoverflow.com/questions/25588779/ios8-swift-deleterowsatindexpaths-crashes
+
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             
@@ -45,7 +49,7 @@ class AuditionListViewController: UITableViewController {
     }
 
     
-    
+    //stackoverflow.com/questions/24022763/uitableview-in-swift
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("UITableViewCell", forIndexPath: indexPath)
         
@@ -55,12 +59,13 @@ class AuditionListViewController: UITableViewController {
         cell.detailTextLabel?.text = "\(item.decision)"
         
         //adding color to the row according to the decision
+       // stackoverflow.com/questions/24074257/how-to-use-uicolorfromrgb-value-in-swift
         if item.decision == "Yes" {
-            cell.backgroundColor = UIColor.greenColor()}
+            cell.backgroundColor = UIColor(red:186/255, green:255/255, blue:201/255, alpha: 1)}
         else if item.decision == "Maybe" {
-            cell.backgroundColor = UIColor.yellowColor()}
+            cell.backgroundColor = UIColor(red:255/255, green:255/255, blue:186/255, alpha: 1)}
         else if item.decision == "No" {
-            cell.backgroundColor = UIColor.redColor()}
+            cell.backgroundColor = UIColor(red:255/255, green:179/255, blue:186/255, alpha: 1)}
         
         
        
@@ -93,6 +98,9 @@ class AuditionListViewController: UITableViewController {
 }
 
 
+    //www.raywenderlich.com/113394/storyboards-tutorial-in-ios-9-part-2
+
+    
     @IBAction func unwindToAuditionList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.sourceViewController as? AuditionViewController, audition = sourceViewController.audition {
             if let selectedIndexPath = tableView.indexPathForSelectedRow{

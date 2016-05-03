@@ -14,7 +14,7 @@ class Audition:NSObject{
     var auditionNotes:String!
     let itemKey: String!
     
-    
+    //stackoverflow.com/questions/21722841/nsuuid-to-nsstring
     init(name:String, decision: String, auditionNotes: String){
         print(decision)
         self.name = name
@@ -38,7 +38,7 @@ class Audition:NSObject{
         
     }
     
-    
+    //www.raywenderlich.com/115695/getting-started-with-core-data-tutorial
     required init(coder aDecoder: NSCoder){
         print("Sam 1")
         name = aDecoder.decodeObjectForKey("name") as! String

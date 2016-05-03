@@ -1,0 +1,36 @@
+Audition App Resources
+
+
+http://stackoverflow.com/questions/24074257/how-to-use-uicolorfromrgb-value-in-swift
+We used this code to understand how to edit colors for the AuditionTableViewCell's decisions.  The cells change color based on the decision.  
+
+
+https://www.raywenderlich.com/113394/storyboards-tutorial-in-ios-9-part-2
+We used this website to figure out how to go backwards in a scene without using the navigation controller.  We wanted to do this because we wanted a cancel button instead of a back button on our Audition page.  We learned that when this segue happens that we can also add in another place for code.
+
+
+http://stackoverflow.com/questions/25588779/ios8-swift-deleterowsatindexpaths-crashes
+We were having issues with trying to figure out how to delete cells and their data from our store.  It took a while, but we found out that we needed to add in the line for if editingstyle == .delete  before it could work.  Or at least it started working after we added this in.  
+
+
+https://www.raywenderlich.com/115695/getting-started-with-core-data-tutorial
+https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CoreData/CreatingObjects.html
+We used this tutorial to figure out how to set up our data model for Audition.
+
+
+http://stackoverflow.com/questions/24022763/uitableview-in-swift
+We used this to figure out how to change the cell data everytime we wanted to edit a cell.  In addition, we also began to learn how to implement edit and delte behavior with our data.  
+
+http://stackoverflow.com/questions/21722841/nsuuid-to-nsstring
+https://developer.apple.com/library/mac/documentation/Foundation/Reference/NSUUID_Class/
+http://nshipster.com/uuid-udid-unique-identifier/
+We used this to generate keys to distinguish each cell's information.
+
+http://stackoverflow.com/questions/14494663/change-uisegmentedcontrol-selected-index-or-value-programatically
+Used this to figure out how to set the different colors for our cells based on the decision on the Audition Page.  
+
+
+http://stackoverflow.com/questions/7385835/uitableview-edit-done-button
+Add an edit button on the AuditionListViewController
+
+

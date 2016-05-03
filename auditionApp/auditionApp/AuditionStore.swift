@@ -9,7 +9,8 @@
 import UIKit
 
 class AuditionStore {
-    
+    //www.raywenderlich.com/115695/getting-started-with-core-data-tutorial
+    //developer.apple.com/library/mac/documentation/Cocoa/Conceptual/CoreData/CreatingObjects.html
     init(){
         if let archivedAuditions = NSKeyedUnarchiver.unarchiveObjectWithFile(auditionArchiveURL.path!) as? [Audition] {
             allAuditions += archivedAuditions
